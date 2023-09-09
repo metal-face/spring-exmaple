@@ -1,6 +1,7 @@
 package com.metalface.application.managers;
 
 import com.metalface.application.dto.AccountDTO;
+import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ public class DefaultAccountsManager implements AccountsManager {
     public AccountDTO createAccount(AccountDTO account) {
         return null;
     }
+
 
     @Override
     public AccountDTO fetchAccount(UUID accountId) {
@@ -34,4 +36,6 @@ public class DefaultAccountsManager implements AccountsManager {
     public void deleteAccount(UUID accountId) {
 
     }
+
+
 }
