@@ -31,4 +31,16 @@ public class AccountsController {
     {
         return this.accountsManager.fetchManyAccounts(PageRequest.of(page, size));
     }
+
+    @PatchMapping(value = "/{id}", produces = "application/json")
+    public AccountDTO updateAccount(@PathVariable  UUID id, @RequestBody AccountDTO account)
+    {
+        return this.accountsManager.updateAccount(id, account);
+    }
+
+    @DeleteMapping(value = "/{id}", produces = "application/json")
+    public void deleteAccount(@PathVariable UUID id)
+    {
+        this.accountsManager.deleteAccount(id);
+    }
 }
